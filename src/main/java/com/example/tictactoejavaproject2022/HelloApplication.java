@@ -82,44 +82,44 @@ public class HelloApplication extends Application {
 
     //Recheck
     public Button createButton(String input) {
-        Button button = new Button();
+        Button button=new Button();
         Board board = new Board();
 
-        //Size of button X
-        button.setMinWidth(100);
-        button.setMinHeight(100);
 
 
-        //Mouse Click
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
+            //Size of button X
+            button.setMinWidth(100);
+            button.setMinHeight(100);
 
-                button.setText("X");
 
-                if (clickedFirst.equals("X")) {
+            //Mouse Click
+            button.setOnAction(new EventHandler<ActionEvent>() {
+                @Override
+                public void handle(ActionEvent actionEvent) {
+
                     button.setText("X");
-                    button.setDisable(true);
-                    clickedFirst = "O";
+
+                    if (clickedFirst.equals("X")) {
+                        button.setText("X");
+                        button.setDisable(true);
+                        clickedFirst = "O";
+                    } else if (clickedFirst.equals("O")) {
+                        button.setText("0");
+                        button.setDisable(true);
+                        clickedFirst = "X";
+                    }
+
                 }
-                else if (clickedFirst.equals("O")){
-                    button.setText("0");
-                    button.setDisable(true);
-                    clickedFirst = "X";
+
+
+                ///Recheck
+                public Players PlayerInput(Button buttonX, Button buttonO) {
+                    Players players = new Players();
+
+                    return players;
                 }
 
-            }
-
-
-
-            ///Recheck
-            public Players PlayerInput(Button buttonX, Button buttonO) {
-                Players players = new Players();
-
-                return players;
-            }
-
-        });
+            });
 
         return button;
     }
