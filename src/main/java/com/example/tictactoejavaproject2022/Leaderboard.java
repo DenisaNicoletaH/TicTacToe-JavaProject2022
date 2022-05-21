@@ -2,37 +2,37 @@ package com.example.tictactoejavaproject2022;
 
 public class Leaderboard implements Iplayable {
 
-    private int score;
-
+    private int scoreX=0;
+    private int scoreO=0;
     private int won;
 
 
 
 
 
-    public Leaderboard (int score,int ties,int won){
+    public Leaderboard (int scoreX,int scoreO,int won){
 
-        this.score=score;this.won=won;
+        this.scoreX=scoreX;
+        this.scoreO=scoreO;
 
     }
 
 
-
+//???
     public int getScore(int score,int won) {
 
     return  getScore(score,won);
     }
 
-    public int getPlayer1Score(int score,int won){
+    public int getPlayer1Score(int scoreX,int won){
 
-        return score;
+        return scoreX;
     }
 
-public int getPlayer2Score(int score,int won){
+    public int getPlayer2Score(int scoreO,int won){
 
 
-
-        return score;
+        return scoreO;
 }
 
 
@@ -44,10 +44,10 @@ public int getPlayer2Score(int score,int won){
 
     @Override
     public void getPlayer2Score() {
-        getScore(score,won);
+        getScore(scoreO,won);
     }
 
     public void getPlayer1Score() {
-        getScore(score,won);
+        getScore(scoreX,won);
     }
 }
