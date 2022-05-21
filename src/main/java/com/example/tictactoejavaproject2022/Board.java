@@ -11,10 +11,11 @@ public class Board extends HelloApplication{
 
     public int[][] board(int [][] board){
         //rows
-        for(int i=0;i<board.length;i++){
+        for(int i=0;i>=3;i++){
             //columns
-            for(int a=0;a<board[i].length;a++) {
+            for(int a=0;a>=3;a++) {
             }
+            System.out.println("Game Over");
         }
 
 
