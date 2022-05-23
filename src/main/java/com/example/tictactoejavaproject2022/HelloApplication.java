@@ -1,6 +1,6 @@
 package com.example.tictactoejavaproject2022;
 
-
+import org.kordamp.bootstrapfx.BootstrapFX;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,10 +15,11 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class HelloApplication extends Application {
 
@@ -33,12 +34,16 @@ public class HelloApplication extends Application {
     private Label resetLabel;
     private Label scoreLabel;
     private Label resultsLabel;
+    private Label resultsLabel2;
     private GridPane gridPane;
+    private int countX=0;
+    private int countO=0;
+
+
 
    String [][] hello1= new String[3][3];
    //Button array
    Button [][] buttonArray=new Button[3][3];
-   List<Button> listOfButtons=new ArrayList<>();
 
 
 
@@ -49,8 +54,8 @@ public class HelloApplication extends Application {
         HBox hBox = new HBox();
         VBox vbox = new VBox();
         Scene scene = new Scene(hBox);
-
-
+        scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
+        //scene.getStylesheets().add("path/mystyle.css");
         //For the Button
         VBox vbox2 = new VBox();
         Scene scene2 = new Scene(vbox2, 500, 500);
@@ -60,7 +65,10 @@ public class HelloApplication extends Application {
         //BorderPane borderPane = new BorderPane();
         label = new Label();
         scoreLabel = new Label();
-        resultsLabel = new Label();
+        resultsLabel = new Label(""+countX);
+        resultsLabel2=new Label("" + countO);
+        haveLeaderboard=new Leaderboard();
+
 
 
         //Children
@@ -69,6 +77,8 @@ public class HelloApplication extends Application {
         vbox.getChildren().add(gridPane);
         vbox.getChildren().add(label);
         vbox2.getChildren().add(scoreLabel);
+        vbox2.getChildren().add(resultsLabel);
+        vbox2.getChildren().add(resultsLabel2);
 
 
 
@@ -82,16 +92,22 @@ public class HelloApplication extends Application {
         Button button2 = new Button("Back");
         button2.setOnAction(e -> stage.setScene(scene));
         vbox2.getChildren().addAll(button2);
-        scoreLabel.setText("Score" + "\n" + "Player X :" + "\n" + "Player O :");
-        //scoreLabel.setMinWidth(50);
-        //scoreLabel.setMinHeight(50);
+        scoreLabel.setText("Score" );
+        resultsLabel.setText("PlayerX:");
+        resultsLabel2.setText("PlayerO:");
 
 
-        //"Window" Position
+
+        //Box Position
         vbox.setAlignment(Pos.CENTER);
         hBox.setAlignment(Pos.CENTER);
         vbox2.setAlignment(Pos.CENTER);
-        ;
+
+
+        //Button
+
+
+
 
         //Title
         label.setText("TicTacToe");
@@ -107,12 +123,14 @@ public class HelloApplication extends Application {
 
 
 
-        /* --------------------------------------------------------
-        haveLeaderboard.getPlayer1Score();
-        haveLeaderboard.getPlayer2Score();
-        */
 
 
+
+
+
+
+
+        //Double Array Buttons
         for(int i=0;i<3;i++){
 
             for(int a=0;a<3;a++){
@@ -150,27 +168,65 @@ public class HelloApplication extends Application {
                 clearedButton.setMinHeight(100);
                 clearedButton.setMinWidth(100);
 
+                label.setText("Tic-Tac-Toe");
 
-                gridPane.add(createButton(), 0, 0, 1, 1);
-                gridPane.add(createButton(), 1, 0, 1, 1);
-                gridPane.add(createButton(), 2, 0, 1, 1);
-                gridPane.add(createButton(), 0, 1, 1, 1);
-                gridPane.add(createButton(), 1, 1, 1, 1);
-                gridPane.add(createButton(), 2, 1, 1, 1);
-                gridPane.add(createButton(), 0, 2, 1, 1);
-                gridPane.add(createButton(), 1, 2, 1, 1);
-                gridPane.add(createButton(), 2, 2, 1, 1);
+                for(int i=0;i<3;i++){
 
+                    for(int a=0;a<3;a++){
+
+                        buttonArray[i][a]=createButton();
+
+                    }
+
+                }
+
+
+
+                //Button Positions
+
+                for(int postionR=0;postionR <3;postionR++){
+                    for(int positionC=0;positionC<3;positionC++){
+                        gridPane.add(buttonArray[postionR][positionC],positionC,postionR,1,1);
+
+
+                    }
+                }
             }
         });
         vbox.getChildren().add(buttonReset);
 
-
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+ //Style
+        //Leaderboard Style
+      buttonLeaderboard.setStyle("-fx-background-color: darkmagenta; -fx-text-fill: white;-fx-font: normal bold 20px 'georgia'");
+        button2.setStyle("-fx-background-color: darkmagenta; -fx-text-fill: white;-fx-font: normal bold 10px 'georgia'");
 
-        int count =0;
+        //reset Button Style
+        buttonReset.setStyle("-fx-background-color: cornflowerblue; -fx-text-fill: white;-fx-font: normal bold 20px 'georgia'");
+
+
+        //Box style
+        hBox.setStyle("-fx-background-color: midnightblue");
+        vbox2.setStyle("-fx-background-color: midnightblue");
+
+
+        //Label Styles(Title + LeaderBoard)
+        label.setStyle("-fx-text: b");
+       scoreLabel.setStyle("-fx-text-fill: white;-fx-font: normal bold 50px 'georgia'");
+        resultsLabel.setStyle("-fx-text-fill: hotpink;-fx-font: normal bold 30px 'georgia'");
+        resultsLabel2.setStyle("-fx-text-fill: hotpink;-fx-font: normal bold 30px 'georgia'");
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -206,6 +262,7 @@ public class HelloApplication extends Application {
                             button.setTextFill(Color.rgb(255, 0, 85));
                             button.setText("X");
                             button.setDisable(true);
+                            label.setText("Player X's Turn ");
                             clickedFirst = "O";
 
                             //get O
@@ -213,83 +270,96 @@ public class HelloApplication extends Application {
                             button.setTextFill(Color.rgb(51, 51, 255));
                             button.setText("O");
                             button.setDisable(true);
+                            label.setText("Player O's Turn");
                             clickedFirst = "X";
 
 
                             //To win
                         }
-                        for(int i=0;i<3;i++){
-                            for(int o=0;o<3;o++){
+                        for (int i = 0; i < 3; i++) {
+                            for (int o = 0; o < 3; o++) {
 
-                                    hello1[i][o]=buttonArray[i][o].getText();
+                                hello1[i][o] = buttonArray[i][o].getText();
+
+
+                            }
+
 
 
 
                         }
+                        //First row
+                        if (hello1[0][0].equals("X") && hello1[0][1].equals("X") && hello1[0][2].equals("X") ||
+                                //Second Row
+                                hello1[1][0].equals("X") && hello1[1][1].equals("X") && hello1[1][2].equals("X") ||
+                                //Third Row
+                                hello1[2][0].equals("X") && hello1[2][1].equals("X") && hello1[2][2].equals("X") ||
+
+                                //Columns
+                                //1st Columns
+                                hello1[0][0].equals("X") && hello1[1][0].equals("X") && hello1[2][0].equals("X") ||
+
+                                //2nd Columns
+                                hello1[0][1].equals("X") && hello1[1][1].equals("X") && hello1[2][1].equals("X") ||
+
+                                //3rd Columns
+                                hello1[0][2].equals("X") && hello1[1][2].equals("X") && hello1[2][2].equals("X") ||
+
+                                //Diagonal
+                                hello1[0][0].equals("X") && hello1[1][1].equals("X") && hello1[2][2].equals("X") ||
+                                hello1[0][2].equals("X") && hello1[1][1].equals("X") && hello1[2][0].equals("X")) {
+
+                            //Leaderboard
+                            resultsLabel.setText("PlayerX:" + haveLeaderboard.getPlayer1Score());
+
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Game information");
+                            alert.setHeaderText("Game Status:");
+                            alert.setContentText("X Won!");
+                            alert.show();
+
+
+
+
+
+
                         }
-                                         //First row
-                                if(hello1[0][0].equals("X")&& hello1[0][1].equals("X")&&hello1[0][2].equals("X") ||
-                                        //Second Row
-                                        hello1[1][0].equals("X")&& hello1[1][1].equals("X")&&hello1[1][2].equals("X") ||
-                                        //Third Row
-                                        hello1[2][0].equals("X")&& hello1[2][1].equals("X")&&hello1[2][2].equals("X") ||
+                        //O winner
+                        if (hello1[0][0].equals("O") && hello1[0][1].equals("O") && hello1[0][2].equals("O") ||
+                                //Second Row
+                                hello1[1][0].equals("O") && hello1[1][1].equals("O") && hello1[1][2].equals("O") ||
+                                //Third Row
+                                hello1[2][0].equals("O") && hello1[2][1].equals("O") && hello1[2][2].equals("O") ||
 
-                                        //Columns
-                                        //1st Columns
-                                        hello1[0][0].equals("X")&& hello1[1][0].equals("X")&&hello1[2][0].equals("X") ||
+                                //Columns
+                                //1st Columns
+                                hello1[0][0].equals("O") && hello1[1][0].equals("O") && hello1[2][0].equals("O") ||
 
-                                        //2nd Columns
-                                        hello1[0][1].equals("X")&& hello1[1][1].equals("X")&&hello1[2][1].equals("X")||
+                                //2nd Columns
+                                hello1[0][1].equals("O") && hello1[1][1].equals("O") && hello1[2][1].equals("O") ||
 
-                                        //3rd Columns
-                                        hello1[0][2].equals("X")&& hello1[1][2].equals("X")&&hello1[2][2].equals("X")||
+                                //3rd Columns
+                                hello1[0][2].equals("O") && hello1[1][2].equals("O") && hello1[2][2].equals("O") ||
 
-                                        //Diagonal
-                                        hello1[0][0].equals("X")&& hello1[1][1].equals("X")&&hello1[2][2].equals("X")||
-                                        hello1[0][2].equals("X")&& hello1[1][1].equals("X")&&hello1[2][0].equals("X")) {
+                                //Diagonal
+                                hello1[0][0].equals("O") && hello1[1][1].equals("O") && hello1[2][2].equals("O") ||
+                                hello1[0][2].equals("O") && hello1[1][1].equals("O") && hello1[2][0].equals("O")) {
 
-                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                    alert.setTitle("Game information");
-                                    alert.setHeaderText("Game Status:");
-                                    alert.setContentText("X Won!");
-                                    alert.show();
+                            //Leaderboard
 
-                                }
-                                //O winner
-                               if (hello1[0][0].equals("O") && hello1[0][1].equals("O") && hello1[0][2].equals("O") ||
-                                            //Second Row
-                                            hello1[1][0].equals("O") && hello1[1][1].equals("O") && hello1[1][2].equals("O") ||
-                                            //Third Row
-                                            hello1[2][0].equals("O") && hello1[2][1].equals("O") && hello1[2][2].equals("O") ||
+                            resultsLabel2.setText("PlayerO:" +  haveLeaderboard.getPlayer2Score());
 
-                                            //Columns
-                                            //1st Columns
-                                            hello1[0][0].equals("O") && hello1[1][0].equals("O") && hello1[2][0].equals("O") ||
-
-                                            //2nd Columns
-                                            hello1[0][1].equals("O") && hello1[1][1].equals("O") && hello1[2][1].equals("O") ||
-
-                                            //3rd Columns
-                                            hello1[0][2].equals("O") && hello1[1][2].equals("O") && hello1[2][2].equals("O") ||
-
-                                            //Diagonal
-                                            hello1[0][0].equals("O") && hello1[1][1].equals("O") && hello1[2][2].equals("O") ||
-                                            hello1[0][2].equals("O") && hello1[1][1].equals("O") && hello1[2][0].equals("O")) {
-
-                                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                        alert.setTitle("Game information");
-                                        alert.setHeaderText("Game Status:");
-                                        alert.setContentText("O Won!");
-                                        alert.show();
+                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                            alert.setTitle("Game information");
+                            alert.setHeaderText("Game Status:");
+                            alert.setContentText("O Won!");
+                            alert.show();
 
 
 
+                        }
 
-
-
-                               }
-
-                                }
+                        }
                 });
 
                 return button;

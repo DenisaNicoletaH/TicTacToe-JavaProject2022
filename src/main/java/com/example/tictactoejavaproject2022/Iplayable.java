@@ -7,8 +7,8 @@ public interface Iplayable  {
    public void haveLeaderboard();
 
 
-    public void getPlayer1Score();
+    public int getPlayer1Score();
 
 
-  public  void getPlayer2Score();
+  public  int getPlayer2Score();
 }

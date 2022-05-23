@@ -10,44 +10,19 @@ public class Leaderboard implements Iplayable {
 
 
 
-    public Leaderboard (int scoreX,int scoreO,int won){
-
-        this.scoreX=scoreX;
-        this.scoreO=scoreO;
-
-    }
-
-
-//???
-    public int getScore(int score,int won) {
-
-    return  getScore(score,won);
-    }
-
-    public int getPlayer1Score(int scoreX,int won){
-
-        return scoreX;
-    }
-
-    public int getPlayer2Score(int scoreO,int won){
-
-
-        return scoreO;
-}
-
-
-
     @Override
     public void haveLeaderboard() {
 
     }
 
     @Override
-    public void getPlayer2Score() {
-        getScore(scoreO,won);
+    public int getPlayer2Score() {
+        scoreO++;
+        return scoreO;
     }
 
-    public void getPlayer1Score() {
-        getScore(scoreX,won);
+    public int getPlayer1Score() {
+        scoreX++;
+        return scoreX;
     }
 }
