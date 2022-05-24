@@ -25,3 +25,21 @@ each player's score,and a "New Game" button is available in hopes that the playe
 
 
                                                         UML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This Tic-Tac-Toe game is just a game that is for anyone who wishes to have fun and enjoy a simple game such as this one.
