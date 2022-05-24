@@ -5,7 +5,7 @@ Tic-Tac-Toe java project winter semester2022
 
 
 
-                                                    Tic-Tac-Toe                       
+                                                           Tic-Tac-Toe                       
 
 
 This is a very simple Tic-Tac-Toe game.It requires two players,one that represents the symbol X and another player that 
@@ -18,10 +18,18 @@ opponents next move, and in hopes that you win!Other than that,additional featur
 each player's score,and a "New Game" button is available in hopes that the players wishes to keep playing. 
 
 
-                                                    Game Preview
-![TicTacToe-Front](https://user-images.githubusercontent.com/91993350/169936104-b5fb70dd-0160-4af9-a162-1dec30ffc60e.PNG)
-![Tictactoe-Winner](https://user-images.githubusercontent.com/91993350/169936106-f4979516-5024-41d0-bb3b-60b531ba32bd.PNG)
-![TicTacToe-LeaderBoard](https://user-images.githubusercontent.com/91993350/169936105-d9b6e22a-1b23-4c38-b003-2a1c97cdcbb6.PNG)
+                                                           Game Preview
+
+
+
+![Tictactoe Final front](https://user-images.githubusercontent.com/91993350/170096504-948add5a-33a3-476b-8420-7ecf740752d6.PNG)
+
+![GameWonTictactoe](https://user-images.githubusercontent.com/91993350/170096503-feba0d0a-f654-4f8b-afcd-2ea3f4b775f6.PNG)
+
+
+![LeaderboardTicTacToe](https://user-images.githubusercontent.com/91993350/170096499-f9a6fcff-51a2-41e8-8a25-661fad4538da.PNG)
+
+
 
 
                                                         UML
