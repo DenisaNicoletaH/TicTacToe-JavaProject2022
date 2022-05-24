@@ -53,7 +53,7 @@ public class HelloApplication extends Application {
         //For Game
         HBox hBox = new HBox();
         VBox vbox = new VBox();
-        Scene scene = new Scene(hBox);
+        Scene scene = new Scene(hBox,500,500);
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         //For the Button
         VBox vbox2 = new VBox();
@@ -109,7 +109,7 @@ public class HelloApplication extends Application {
 
 
         //Title
-        label.setText("TicTacToe");
+        label.setText("Tic-Tac-Toe");
         label.setAlignment(Pos.TOP_CENTER);
         label.setMinWidth(100);
         label.setMinHeight(50);
@@ -208,8 +208,8 @@ public class HelloApplication extends Application {
 
 
         //Box style
-        hBox.setStyle("-fx-background-color: midnightblue");
-        vbox2.setStyle("-fx-background-color: midnightblue");
+        hBox.setStyle("-fx-background-image: url(https://wallpaperaccess.com/full/2641065.gif);-fx-background-size: cover");
+        vbox2.setStyle("-fx-background-image: url(https://www.icegif.com/wp-content/uploads/nyan-cat-icegif-1.gif);-fx-background-size: cover");
 
 
         //Label Styles(Title + LeaderBoard)
@@ -217,6 +217,10 @@ public class HelloApplication extends Application {
        scoreLabel.setStyle("-fx-text-fill: white;-fx-font: normal bold 50px 'georgia'");
         resultsLabel.setStyle("-fx-text-fill: hotpink;-fx-font: normal bold 30px 'georgia'");
         resultsLabel2.setStyle("-fx-text-fill: hotpink;-fx-font: normal bold 30px 'georgia'");
+
+        //Button Style
+        gridPane.setStyle("-fx-background-image: url(https://d11a6trkgmumsb.cloudfront.net/original/3X/e/c/ecfbdc40a262cfcf8862fefc5935d276f3fb3280.gif);-fx-background-size: cover");
+
 
 
 
@@ -312,12 +316,6 @@ public class HelloApplication extends Application {
                             alert.setHeaderText("Game Status:");
                             alert.setContentText("X Won!");
                             alert.show();
-
-
-
-                            //Leaderboard
-
-
 
                         }
                         //O winner

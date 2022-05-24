@@ -6,8 +6,13 @@ public interface Iplayable  {
 
    public void haveLeaderboard();
 
+
+
+
     //X
    public int getIncrementedScoreXPlayer1();
+
+
 
    //O
     public int getIncrementedScoreOPlayer2();
