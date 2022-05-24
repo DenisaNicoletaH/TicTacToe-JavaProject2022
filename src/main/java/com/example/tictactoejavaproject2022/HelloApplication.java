@@ -55,7 +55,6 @@ public class HelloApplication extends Application {
         VBox vbox = new VBox();
         Scene scene = new Scene(hBox);
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
-        //scene.getStylesheets().add("path/mystyle.css");
         //For the Button
         VBox vbox2 = new VBox();
         Scene scene2 = new Scene(vbox2, 500, 500);
@@ -157,7 +156,7 @@ public class HelloApplication extends Application {
 
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        //Reset
+        //Reset Button
         Button buttonReset = new Button("New Game");
         buttonReset.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -198,7 +197,8 @@ public class HelloApplication extends Application {
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
- //Style
+        //Style
+
         //Leaderboard Style
       buttonLeaderboard.setStyle("-fx-background-color: darkmagenta; -fx-text-fill: white;-fx-font: normal bold 20px 'georgia'");
         button2.setStyle("-fx-background-color: darkmagenta; -fx-text-fill: white;-fx-font: normal bold 10px 'georgia'");
@@ -236,10 +236,7 @@ public class HelloApplication extends Application {
                 stage.show();
             }
 
-
-            //Board board = new Board();
-
-            //Recheck
+            //Create Button Method
             public Button createButton() {
                 Button button = new Button();
 
@@ -308,9 +305,7 @@ public class HelloApplication extends Application {
                                 //Diagonal
                                 hello1[0][0].equals("X") && hello1[1][1].equals("X") && hello1[2][2].equals("X") ||
                                 hello1[0][2].equals("X") && hello1[1][1].equals("X") && hello1[2][0].equals("X")) {
-
-                            //Leaderboard
-                            resultsLabel.setText("PlayerX:" + haveLeaderboard.getPlayer1Score());
+                            resultsLabel.setText("PlayerX:" + haveLeaderboard.getIncrementedScoreXPlayer1());
 
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Game information");
@@ -320,6 +315,7 @@ public class HelloApplication extends Application {
 
 
 
+                            //Leaderboard
 
 
 
@@ -345,9 +341,6 @@ public class HelloApplication extends Application {
                                 hello1[0][0].equals("O") && hello1[1][1].equals("O") && hello1[2][2].equals("O") ||
                                 hello1[0][2].equals("O") && hello1[1][1].equals("O") && hello1[2][0].equals("O")) {
 
-                            //Leaderboard
-
-                            resultsLabel2.setText("PlayerO:" +  haveLeaderboard.getPlayer2Score());
 
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Game information");
@@ -355,6 +348,9 @@ public class HelloApplication extends Application {
                             alert.setContentText("O Won!");
                             alert.show();
 
+                            //Leaderboard
+
+                            resultsLabel2.setText("PlayerO:" +  haveLeaderboard.getIncrementedScoreOPlayer2());
 
 
                         }
