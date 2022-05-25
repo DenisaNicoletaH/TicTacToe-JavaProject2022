@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class TestLeaderboardClass {
+
+        //If score is set
         @Test
         void setPlayer1Score_IsSetCorrectly(){
             Leaderboard player1 = new Leaderboard();
@@ -21,6 +23,7 @@ public class TestLeaderboardClass {
             assertEquals(4, player2.getPlayer2Score());
         }
 
+        //Count
         @Test
         void countIncrementsForPlayer1_whenScoreChanges() {
             Leaderboard player1 = new Leaderboard();
@@ -35,6 +38,7 @@ public class TestLeaderboardClass {
             assertEquals(4, player2.getIncrementedScoreOPlayer2());
         }
 
+        //Announce winner
         @Test
         void setWinner_IsSetCorrectly(){
             Leaderboard player1 = new Leaderboard();

@@ -169,8 +169,9 @@ public class HelloApplication extends Application {
 
                 label.setText("Tic-Tac-Toe");
 
+                //rows
                 for(int i=0;i<3;i++){
-
+                    //columns
                     for(int a=0;a<3;a++){
 
                         buttonArray[i][a]=createButton();
@@ -200,11 +201,11 @@ public class HelloApplication extends Application {
         //Style
 
         //Leaderboard Style
-      buttonLeaderboard.setStyle("-fx-background-color: darkmagenta; -fx-text-fill: white;-fx-font: normal bold 20px 'georgia'");
+      buttonLeaderboard.setStyle("-fx-background-color: linear-gradient(pink,blue)    ; -fx-text-fill: white;-fx-font: normal bold 20px 'georgia'");
         button2.setStyle("-fx-background-color: darkmagenta; -fx-text-fill: white;-fx-font: normal bold 10px 'georgia'");
 
         //reset Button Style
-        buttonReset.setStyle("-fx-background-color: cornflowerblue; -fx-text-fill: white;-fx-font: normal bold 20px 'georgia'");
+        buttonReset.setStyle("-fx-background-color: linear-gradient(purple,yellow); -fx-text-fill: white;-fx-font: normal bold 20px 'georgia'");
 
 
         //Box style
@@ -215,13 +216,11 @@ public class HelloApplication extends Application {
         //Label Styles(Title + LeaderBoard)
         label.setStyle("-fx-text: b");
        scoreLabel.setStyle("-fx-text-fill: white;-fx-font: normal bold 50px 'georgia'");
-        resultsLabel.setStyle("-fx-text-fill: hotpink;-fx-font: normal bold 30px 'georgia'");
+        resultsLabel.setStyle("-fx-text-fill: hotpink ;-fx-font: normal bold 30px 'georgia'");
         resultsLabel2.setStyle("-fx-text-fill: hotpink;-fx-font: normal bold 30px 'georgia'");
 
         //Button Style
         gridPane.setStyle("-fx-background-image: url(https://d11a6trkgmumsb.cloudfront.net/original/3X/e/c/ecfbdc40a262cfcf8862fefc5935d276f3fb3280.gif);-fx-background-size: cover");
-
-
 
 
 
@@ -266,6 +265,7 @@ public class HelloApplication extends Application {
                             label.setText("Player X's Turn ");
                             clickedFirst = "O";
 
+
                             //get O
                         } else if (clickedFirst.equals("O")) {
                             button.setTextFill(Color.rgb(51, 51, 255));
@@ -291,10 +291,13 @@ public class HelloApplication extends Application {
                         }
                         //First row
                         if (hello1[0][0].equals("X") && hello1[0][1].equals("X") && hello1[0][2].equals("X") ||
+
                                 //Second Row
                                 hello1[1][0].equals("X") && hello1[1][1].equals("X") && hello1[1][2].equals("X") ||
+
                                 //Third Row
                                 hello1[2][0].equals("X") && hello1[2][1].equals("X") && hello1[2][2].equals("X") ||
+
 
                                 //Columns
                                 //1st Columns
@@ -322,10 +325,13 @@ public class HelloApplication extends Application {
 
                         //O winner
                         if (hello1[0][0].equals("O") && hello1[0][1].equals("O") && hello1[0][2].equals("O") ||
+
                                 //Second Row
                                 hello1[1][0].equals("O") && hello1[1][1].equals("O") && hello1[1][2].equals("O") ||
+
                                 //Third Row
                                 hello1[2][0].equals("O") && hello1[2][1].equals("O") && hello1[2][2].equals("O") ||
+
 
                                 //Columns
                                 //1st Columns
