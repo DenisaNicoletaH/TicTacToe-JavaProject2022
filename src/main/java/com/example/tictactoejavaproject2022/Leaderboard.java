@@ -1,12 +1,11 @@
 package com.example.tictactoejavaproject2022;
 
-public class Leaderboard implements Iplayable {
+public class Leaderboard extends Winner implements IScore {
 
     private int scoreX=0;
     private int scoreO=0;
-    private int won;
-    private int incrementedScoreX=0;
-    private int incrementedScoreO=0;
+
+
 
 
     public void setPlayer1Score(int scoreX) {
@@ -22,6 +21,18 @@ public class Leaderboard implements Iplayable {
 
     }
 
+    public int getPlayer1Score() {
+
+        return scoreX;
+
+    }
+
+
+    public int getPlayer2Score() {
+
+        return scoreO;
+
+    }
 
 
     @Override
@@ -32,7 +43,7 @@ public class Leaderboard implements Iplayable {
     //O
     @Override
     public int getIncrementedScoreXPlayer1() {
-      scoreX++;
+        scoreX++;
         return scoreX;
     }
 
@@ -40,5 +51,7 @@ public class Leaderboard implements Iplayable {
     public int getIncrementedScoreOPlayer2() {
         scoreO++;
         return scoreO;
-  }
+    }
+
+
 }

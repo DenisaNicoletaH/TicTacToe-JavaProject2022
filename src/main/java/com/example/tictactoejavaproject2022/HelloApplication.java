@@ -309,15 +309,17 @@ public class HelloApplication extends Application {
                                 //Diagonal
                                 hello1[0][0].equals("X") && hello1[1][1].equals("X") && hello1[2][2].equals("X") ||
                                 hello1[0][2].equals("X") && hello1[1][1].equals("X") && hello1[2][0].equals("X")) {
-                            resultsLabel.setText("PlayerX:" + haveLeaderboard.getIncrementedScoreXPlayer1());
 
+                            resultsLabel.setText("PlayerX:" + haveLeaderboard.getIncrementedScoreXPlayer1());
+                            haveLeaderboard.setWinner("X");
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Game information");
                             alert.setHeaderText("Game Status:");
-                            alert.setContentText("X Won!");
+                            alert.setContentText(haveLeaderboard.getWinner() + " " + "Won!");
                             alert.show();
 
                         }
+
                         //O winner
                         if (hello1[0][0].equals("O") && hello1[0][1].equals("O") && hello1[0][2].equals("O") ||
                                 //Second Row
@@ -339,16 +341,19 @@ public class HelloApplication extends Application {
                                 hello1[0][0].equals("O") && hello1[1][1].equals("O") && hello1[2][2].equals("O") ||
                                 hello1[0][2].equals("O") && hello1[1][1].equals("O") && hello1[2][0].equals("O")) {
 
-
+                            resultsLabel2.setText("PlayerO:" +  haveLeaderboard.getIncrementedScoreOPlayer2());
+                            haveLeaderboard.setWinner("O");
                             Alert alert = new Alert(Alert.AlertType.INFORMATION);
                             alert.setTitle("Game information");
                             alert.setHeaderText("Game Status:");
-                            alert.setContentText("O Won!");
+
+                            alert.setContentText(haveLeaderboard.getWinner() +" " + "Won!");
+
                             alert.show();
 
                             //Leaderboard
 
-                            resultsLabel2.setText("PlayerO:" +  haveLeaderboard.getIncrementedScoreOPlayer2());
+
 
 
                         }

@@ -1,13 +1,9 @@
 package com.example.tictactoejavaproject2022;
 
-public interface Iplayable  {
+public interface IScore  {
 
 
-
-   public void haveLeaderboard();
-
-
-
+    public void haveLeaderboard();
 
     //X
    public int getIncrementedScoreXPlayer1();
@@ -16,4 +12,7 @@ public interface Iplayable  {
 
    //O
     public int getIncrementedScoreOPlayer2();
+
+
+
 }
