@@ -21,9 +21,8 @@ While in the making,I encountered some problems,such as the making of the combin
 
 
 
-This Tic-Tac-Toe game is made by using Java and Javafx.It consists of a Leaderboard class that hold;s and keeps
-count of each player's score every time that they win.............
-
+This Tic-Tac-Toe game is made by using Java and Javafx.It consists of a Leaderboard class that holds and keeps
+count of each player's score every time that they win,an abstract Winner class that holds a string that will be used in announcing the winner,an interface that's called IScore that hold the score incrementation of each player and at last,the HelloApplication that is the Javafx (the main).
 
 
                                                            Game Preview
