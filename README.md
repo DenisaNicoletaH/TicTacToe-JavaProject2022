@@ -1,3 +1,4 @@
+
 # TicTacToe-JavaProject2022
 Tic-Tac-Toe java project winter semester2022
 
@@ -32,9 +33,10 @@ each player's score,and a "New Game" button is available in hopes that the playe
 
 
 
-                                                        UML
+                                                                UML
 
 
+![FinalFinal Uml TIctactoe](https://user-images.githubusercontent.com/91993350/170163353-069543a1-6403-4416-a873-4fd8b0b4a421.PNG)
 
 
 
