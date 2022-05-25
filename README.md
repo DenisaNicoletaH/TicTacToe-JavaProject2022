@@ -10,13 +10,20 @@ Tic-Tac-Toe java project winter semester2022
 
 
 This is a very simple Tic-Tac-Toe game.It requires two players,one that represents the symbol X and another player that 
-represents the symbol O.The purpose of this game is to win by acheiving a combination of three of each player's symbol,either
-horizontal,vertical or diagonal.
+represents the symbol O.The purpose of this game is to win by acheiving a combination of three of each player's symbol,either horizontal,vertical or diagonal.
 
 
 In order to be able to play,all you have to do is simply pressing the buttons shown,while using logic to figure out your 
-opponents next move, and in hopes that you win!Other than that,additional features such as a Leaderboard,who is keeping hold of
-each player's score,and a "New Game" button is available in hopes that the players wishes to keep playing. 
+opponents next move, and in hopes that you win!Other than that,additional features such as a Leaderboard,who is keeping hold of each player's score,and a "New Game" button is available in hopes that the players wishes to keep playing. 
+
+
+While in the making,I encountered some problems,such as the making of the combinations in order to win,was quite challenging.I had to modify a significant amount of my code in order to be able to acheive results. 
+
+
+
+This Tic-Tac-Toe game is made by using Java and Javafx.It consists of a Leaderboard class that hold;s and keeps
+count of each player's score every time that they win.............
+
 
 
                                                            Game Preview
